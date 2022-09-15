@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Yodlr Registration Portal{% endblock %}
+{% block content %}
+
+<h1>Yodlr Registration Portal</h1>
+  <form class="form-floating" action="/users" method="POST">
+    <div class="form-floating mb-3">
+      <input class="form-control" type="email" id="email" name="email" required>
+      <label for="email">Email address</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input class="form-control" type="text" id="firstName" name="firstName" required>
+      <label for="firstName">First Name</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input class="form-control" type="text" id="lastName" name="lastName" required>
+      <label for="lastName">Last Name</label>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+
+  <p>
+    <a class="btn btn-secondary" href="/admin.html">Admin Page</a>
+  </p>
+
+{% endblock %}

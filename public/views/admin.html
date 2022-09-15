@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Admin{% endblock %}
+{% block content %}
+
+<h1>User List</h1>
+<!-- Search Bar -->
+<form class="form-inline" action="search" method="GET">
+  <div class="form-group mb-2">
+    <label for="search-bar" class="sr-only">search</label>
+    <input type="search" class="form-control" id="search-bar" placeholder="search" name="searchTerm">
+  </div>
+  <button type="submit" class="btn btn-primary ml-2 mb-2">Search</button>
+</form>
+<!-- Users -->
+<div id="user-list" class=" d-flex flex-wrap justify-content-between">
+  {% for user in tempUsers %}
+    <div class="card mb-2"  style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{user.email}}</h6>
+        <a href="/users/{{user.id}}" class="stretched-link">User Details</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

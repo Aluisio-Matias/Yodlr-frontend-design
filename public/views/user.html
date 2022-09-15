@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Admin{% endblock %}
+{% block content %}
+
+<h1>User</h1>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
+    <h6 class="card-subtitle mb-3">{{user.email}}</h6>
+    <p class="card-subtitle mb-2 text-muted">State: {{user.state}}</p>
+    {% if (user.state == 'pending') %}
+      <button class="btn btn-primary">Activate</button>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}
